@@ -19,13 +19,14 @@
         </div>
 
         <h5 class="card-title text-center m-3">Recuperar Senha</h5>
-
+        <form wire:submit.prevent="login">
         <div class="mb-2 mt-2">
-            <input type="email" class="form-control" placeholder="insira seu email..." >
+            <input type="email" id="email" wire:model="email"  class="form-control" placeholder="insira seu email..." >
         </div>
 
 
-         <button class="btn btn-warning mt-3"> <i class="bi bi-box-arrow-up"></i> Enviar</button>
+         <button class="btn btn-warning mt-3" type="submit" value="submit"> <i class="bi bi-box-arrow-up"></i> Enviar</button>
+        </form>
 
     </div>
     
