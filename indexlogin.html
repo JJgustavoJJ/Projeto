@@ -11,43 +11,54 @@
     <title>Login ReacH</title>
 </head>
 
-<body class="container bg-primary" >
-    
+<body class="bg-primary d-flex align-items-center justify-content-center vh-100">
 
-    <div class="card shadow-sm position-absolute top-50 start-50 translate-middle " style="width: 20rem;">
-        <div class="card-body m-5">
+    <div class="card shadow-lg border-0" style="width: 24rem; border-radius: 15px;">
+        <div class="card-body p-4 pt-5">
+            
+            <!-- Avatar centralizado no topo -->
+            <div class="position-absolute top-0 start-50 translate-middle">
+                <img src="./img/Captura de tela 2026-03-26 101337.png" 
+                     class="rounded-circle border border-4 border-white shadow-sm" 
+                     width="100px" height="100px" style="object-fit: cover;">
+            </div>
 
-        <div class="position-absolute top-0 start-50 translate-middle">
-            <img src="./img/Captura de tela 2026-03-26 101337.png" class="rounded-circle border border-4" width="100px">
-        </div>
-
-        <h5 class="card-title text-center mb-3">Entrar no ReacH</h5>
+            <h5 class="card-title text-center my-4 fw-bold">Entrar no ReacH</h5>
+            
             <form wire:submit.prevent="login">
+                <!-- Campo Email -->
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" wire:model='email' class="form-control" placeholder="Seu email corporativo">
+                </div>
 
-        <div class="mb-3">
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" id="email" wire:model='email' class="form-control" placeholder="insira seu login...">
-            </div>
-            <div>
-                 <label for="password" class="form-label">Senha</label>
-                <input type="password" id="password" wire:model='password' class="form-control" placeholder="insira sua senha...">
-            </div>
+                <!-- Campo Senha -->
+                <div class="mb-3">
+                    <label for="password" class="form-label">Senha</label>
+                    <input type="password" id="password" wire:model='password' class="form-control" placeholder="Sua senha">
+                </div>
+
+                <!-- Opções e Recuperação -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div class="form-check m-0">
+                        <input class="form-check-input" type="checkbox" id="remember">
+                        <label class="form-check-label small" for="remember">Lembrar login</label>
+                    </div>
+                    <a href="./indexRecsenha.html" class="small text-decoration-none text-muted">Esqueceu a senha?</a>
+                </div>
+
+                <!-- Botão de Ação -->
+                <div class="d-grid">
+                    <button class="btn btn-warning fw-bold py-2 shadow-sm" type="submit">
+                        <i class="bi bi-box-arrow-right me-2"></i> Entrar
+                    </button>
+                </div>
+            </form>
         </div>
-
-
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="autoSizingCheck2">
-            <label class="form-check-label" for="autoSizingCheck2">Lembrar login</label>
-        </div>
-
-        <a href="./indexsenha.html">Recuperar Senha</a>
-
-        <button class="btn btn-warning mt-3" type="submit" value="submit"> <i class="bi bi-box-arrow-right"></i> Entrar</button>
-        </form>
     </div>
 
-    </div>
+</body>
+
 
     
 
