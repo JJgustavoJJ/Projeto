@@ -6,19 +6,87 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-    <title>Recuperar Senha</title>
+    <title>Recuperar Senha - ReacH</title>
+
+    <style>
+        /* Paleta de Cores Personalizada */
+        :root {
+            --azul-escuro: #1a2a40;
+            --laranja: #f37021;
+            --cinza-claro: #f8f9fa;
+            --cinza-texto: #6c757d;
+        }
+
+        body {
+            background-color: var(--azul-escuro) !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            border: none;
+            border-top: 5px solid var(--laranja);
+            border-radius: 15px;
+            width: 22rem;
+            position: relative;
+        }
+
+        .card-title {
+            color: var(--azul-escuro);
+        }
+
+        .form-label {
+            color: var(--cinza-texto);
+        }
+
+        /* Estilização do Botão */
+        .btn-recuperar {
+            background-color: var(--laranja) !important;
+            border-color: var(--laranja) !important;
+            color: white !important;
+            transition: 0.3s;
+        }
+
+        .btn-recuperar:hover {
+            filter: brightness(90%);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Foco no Input */
+        .form-control:focus {
+            border-color: var(--laranja);
+            box-shadow: 0 0 0 0.25rem rgba(243, 112, 33, 0.25);
+        }
+
+        .img-avatar {
+            object-fit: cover;
+            background-color: white;
+        }
+        /* Link  */
+        .link {
+            color: var(--azul-escuro);
+            transition: 0.3s;
+        }
+
+        .link:hover {
+            color: var(--laranja) !important;
+        }
+    </style>
 </head>
 
-<body class="bg-primary d-flex align-items-center justify-content-center vh-100">
+<body>
 
-    <div class="card shadow-lg border-0" style="width: 22rem; border-radius: 15px;">
+    <div class="card shadow-lg">
         <div class="card-body p-4 pt-5">
             
             <!-- Avatar centralizado no topo -->
             <div class="position-absolute top-0 start-50 translate-middle">
                 <img src="./img/Captura de tela 2026-03-26 101337.png" 
-                     class="rounded-circle border border-4 border-white shadow-sm" 
-                     width="90px" height="90px" style="object-fit: cover;">
+                     class="rounded-circle border border-4 border-white shadow-sm img-avatar" 
+                     width="90" height="90" alt="Logo ReacH">
             </div>
 
             <div class="text-center mt-4 mb-4">
@@ -26,24 +94,27 @@
                 <p class="text-muted small">Enviaremos um link de recuperação para o seu e-mail.</p>
             </div>
 
-            <form wire:submit.prevent="login">
+            <form>
                 <div class="mb-4">
                     <label for="email" class="form-label small fw-bold">E-mail Cadastrado</label>
-                    <input type="email" id="email" wire:model="email" class="form-control py-2" placeholder="exemplo@reach.com">
+                    <input type="email" id="email" class="form-control py-2" placeholder="exemplo@reach.com">
                 </div>
 
                 <div class="d-grid">
-                    <button class="btn btn-warning fw-bold py-2 shadow-sm" onclick="window.location.href='./indexAltsenha.html'" type="button">
+                    <button class="btn btn-recuperar fw-bold py-2 shadow-sm" onclick="window.location.href='./indexAltsenha.html'" type="button">
                         <i class="bi bi-send-fill me-2"></i> Enviar Link
                     </button>
                 </div>
-                
+
+                <div class="text-center mt-3">
+                    <a href="./index.html" class="small text-decoration-none link" style="color: var(--azul-escuro);">
+                        <i class="bi bi-arrow-left"></i> Voltar ao login
+                    </a>
+                </div>
             </form>
         </div>
     </div>
 
+    <script src="https://jsdelivr.net"></script>
 </body>
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.buncle.min.js"></script>
 </html>
